@@ -31,7 +31,7 @@ submitBtn.addEventListener("click", () => {
 
     // Check if the answer is correct
     if (userInput === correctCode) {
-        message.textContent = "Congrats! Let's go! 🎉";
+        message.textContent = "Congrats! Let's go! ";
 
         // Wait 1 second, then go to the next page
         setTimeout(() => {
@@ -40,6 +40,6 @@ submitBtn.addEventListener("click", () => {
     }
     // Wrong answer
     else {
-        message.textContent = "Try again... 👀";
+        message.textContent = "Try again... ";
     }
 });
