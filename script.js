@@ -1,9 +1,10 @@
 // Mapping the codes
 
 const codes = {
-    "GAME": "task1.html",      // First code to Task 1
-    "DATE": "task2.html",      // Second code to Task 2
-    "BIRTHDAY": "task3.html"   // Third code to Task 3
+    "Game": "index.html",      // Code to Index
+    "Date": "task1.html",      // First code to Task 1
+    "Blue": "task2.html",      // Second code to Task 2
+    "Birthday": "task3.html"   // Third code to Task 3
 };
 
 const submitBtn = document.getElementById("submitBtn");
