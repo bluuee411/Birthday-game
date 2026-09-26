@@ -1,9 +1,8 @@
 // Mapping the codes
 
 const codes = {
-    "Game": "index.html",      // Code to Index
-    "Date": "task1.html",      // First code to Task 1
-    "Blue": "task2.html",      // Second code to Task 2
+    "Game": "task1.html",      // First code to Task 1
+    "Date": "task2.html",      // Second code to Task 2
     "Birthday": "task3.html"   // Third code to Task 3
 };
 
