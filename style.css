@@ -1,104 +1,416 @@
-/* =========================
-   NIGHT SKY BACKGROUND
-   ========================= */
+/* =========================================
+   🌌 WHIMSICAL NIGHT SKY
+   ========================================= */
 
 * {
     box-sizing: border-box;
 }
 
+html,
 body {
-    background:
-        radial-gradient(circle at 50% 0%, #101d4a 0%, #050b20 45%, #01030d 100%);
-    color: #b5e1ff;
-    font-family: Arial, sans-serif;
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    overflow: hidden;
 
     display: flex;
     justify-content: center;
     align-items: flex-start;
 
-    min-height: 100vh;
-    margin: 0;
-
-    overflow: hidden;
     position: relative;
+
+    font-family: Arial, sans-serif;
+    color: #d8e7ff;
+
+    /* Deep magical night sky */
+    background:
+        radial-gradient(
+            circle at 50% -10%,
+            #172b67 0%,
+            #0b163d 30%,
+            #04091f 65%,
+            #01030d 100%
+        );
 }
 
-/* Small stars */
+
+/* =========================================
+   ✨ TINY STARS
+   ========================================= */
+
 body::before {
     content: "";
+
     position: fixed;
     inset: 0;
 
+    pointer-events: none;
+
+    z-index: 0;
+
+    /* Lots of tiny stars */
     background-image:
-        radial-gradient(circle, rgba(255,255,255,0.9) 1px, transparent 1.5px),
-        radial-gradient(circle, rgba(174,220,255,0.8) 1px, transparent 1.5px),
-        radial-gradient(circle, rgba(255,255,255,0.7) 1.5px, transparent 2px);
+        radial-gradient(circle, rgba(255,255,255,0.95) 1px, transparent 1.5px),
+        radial-gradient(circle, rgba(185,220,255,0.9) 1px, transparent 1.5px),
+        radial-gradient(circle, rgba(255,255,255,0.75) 1.2px, transparent 1.8px),
+        radial-gradient(circle, rgba(140,190,255,0.65) 1px, transparent 1.5px);
 
     background-size:
-        90px 90px,
-        140px 140px,
-        210px 210px;
+        83px 91px,
+        137px 149px,
+        197px 181px,
+        263px 239px;
 
     background-position:
-        10px 20px,
-        50px 80px,
-        120px 40px;
+        15px 10px,
+        70px 40px,
+        20px 100px,
+        130px 20px;
 
-    opacity: 0.8;
-    pointer-events: none;
-    z-index: 0;
+    animation:
+        starsDrift 35s linear infinite,
+        starsTwinkle 5s ease-in-out infinite alternate;
 }
 
-/* Extra glowing stars */
+
+/* =========================================
+   ⭐ SPARKLING STARS
+   ========================================= */
+
 body::after {
-    content: "✦     ✧          ⋆       ✦            ✧
-    
-       ⋆          ✦      ✧          ⋆
-
-   ✧          ⋆          ✦        ✧
-
-        ✦             ⋆           ✧
-
-   ⋆        ✧              ✦          ⋆";
+    content: "✦        ✧             ✦
+   
+       ✧              ⋆             ✦
+   
+  ⋆             ✦          ✧
+   
+         ✦              ⋆
+   
+    ✧          ✦               ✧
+   
+           ⋆          ✦
+   
+  ✦              ✧          ⋆";
 
     position: fixed;
     inset: 0;
 
-    color: rgba(190, 225, 255, 0.75);
-    font-size: 18px;
-    line-height: 90px;
-    letter-spacing: 25px;
-
-    white-space: pre;
     pointer-events: none;
-
-    text-shadow:
-        0 0 5px #ffffff,
-        0 0 10px #7ab8ff,
-        0 0 20px #397cff;
-
-    opacity: 0.55;
 
     z-index: 1;
 
-    animation: twinkle 4s ease-in-out infinite alternate;
+    white-space: pre;
+
+    color: rgba(230, 242, 255, 0.8);
+
+    font-size: 22px;
+    line-height: 115px;
+    letter-spacing: 18px;
+
+    text-shadow:
+        0 0 4px #ffffff,
+        0 0 8px #b7d9ff,
+        0 0 16px #70a8ff,
+        0 0 30px #477cff;
+
+    animation:
+        sparkle 3s ease-in-out infinite alternate,
+        sparkleMove 18s ease-in-out infinite alternate;
 }
 
-/* Stars gently twinkle */
-@keyframes twinkle {
-    from {
+
+/* =========================================
+   🌟 STAR TWINKLING
+   ========================================= */
+
+@keyframes starsTwinkle {
+
+    0% {
         opacity: 0.35;
     }
 
-    to {
+    25% {
         opacity: 0.8;
+    }
+
+    50% {
+        opacity: 0.45;
+    }
+
+    75% {
+        opacity: 0.95;
+    }
+
+    100% {
+        opacity: 0.5;
     }
 }
 
 
-/* =========================
-   MAIN CONTAINER
-   ========================= */
+/* =========================================
+   🌌 VERY SLOW STAR MOVEMENT
+   ========================================= */
+
+@keyframes starsDrift {
+
+    0% {
+        background-position:
+            15px 10px,
+            70px 40px,
+            20px 100px,
+            130px 20px;
+    }
+
+    50% {
+        background-position:
+            35px 30px,
+            45px 70px,
+            45px 80px,
+            100px 45px;
+    }
+
+    100% {
+        background-position:
+            15px 10px,
+            70px 40px,
+            20px 100px,
+            130px 20px;
+    }
+}
+
+
+/* =========================================
+   ✨ BIG STAR SPARKLE
+   ========================================= */
+
+@keyframes sparkle {
+
+    0% {
+        opacity: 0.25;
+        transform: scale(0.92);
+    }
+
+    30% {
+        opacity: 0.75;
+        transform: scale(1);
+    }
+
+    55% {
+        opacity: 0.35;
+        transform: scale(0.95);
+    }
+
+    80% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+
+    100% {
+        opacity: 0.45;
+        transform: scale(0.98);
+    }
+}
+
+
+@keyframes sparkleMove {
+
+    0% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(-8px, 5px);
+    }
+
+    100% {
+        transform: translate(5px, -4px);
+    }
+}
+
+
+/* =========================================
+   ☄️ SHOOTING STAR / ROCKET
+   ========================================= */
+
+/*
+   This creates a bright shooting star with
+   a long glowing trail.
+*/
+
+.container::before {
+    content: "";
+
+    position: fixed;
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    box-shadow:
+        0 0 5px white,
+        0 0 10px #dff2ff,
+        0 0 20px #8bc5ff,
+        0 0 35px #4d91ff;
+
+    top: 18%;
+    left: -10%;
+
+    z-index: 3;
+
+    pointer-events: none;
+
+    animation: shootingStar 7s linear infinite;
+}
+
+
+/* =========================================
+   💫 SHOOTING STAR TRAIL
+   ========================================= */
+
+.container::after {
+    content: "";
+
+    position: fixed;
+
+    width: 170px;
+    height: 3px;
+
+    border-radius: 100%;
+
+    top: 18%;
+    left: -30%;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            to right,
+            transparent,
+            rgba(92, 170, 255, 0.15),
+            rgba(168, 220, 255, 0.55),
+            white
+        );
+
+    box-shadow:
+        0 0 8px #9bd4ff,
+        0 0 18px #5caaff,
+        0 0 30px rgba(66, 137, 255, 0.7);
+
+    transform: rotate(-25deg);
+
+    animation: shootingTrail 7s linear infinite;
+}
+
+
+/* =========================================
+   ☄️ SHOOTING STAR ANIMATION
+   ========================================= */
+
+@keyframes shootingStar {
+
+    0% {
+        left: -10%;
+        top: 15%;
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    5% {
+        opacity: 1;
+    }
+
+    20% {
+        left: 25%;
+        top: 27%;
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    30% {
+        left: 50%;
+        top: 39%;
+        opacity: 1;
+        transform: scale(1.15);
+    }
+
+    40% {
+        left: 75%;
+        top: 51%;
+        opacity: 0.8;
+        transform: scale(1);
+    }
+
+    46% {
+        left: 110%;
+        top: 67%;
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    100% {
+        left: 110%;
+        top: 67%;
+        opacity: 0;
+    }
+}
+
+
+@keyframes shootingTrail {
+
+    0% {
+        left: -30%;
+        top: 15%;
+        opacity: 0;
+    }
+
+    5% {
+        opacity: 1;
+    }
+
+    20% {
+        left: 10%;
+        top: 27%;
+        opacity: 1;
+    }
+
+    30% {
+        left: 35%;
+        top: 39%;
+        opacity: 1;
+    }
+
+    40% {
+        left: 60%;
+        top: 51%;
+        opacity: 0.8;
+    }
+
+    46% {
+        left: 100%;
+        top: 67%;
+        opacity: 0;
+    }
+
+    100% {
+        left: 100%;
+        top: 67%;
+        opacity: 0;
+    }
+}
+
+
+/* =========================================
+   🎂 MAIN GAME BOX
+   ========================================= */
 
 .container {
     position: relative;
@@ -115,52 +427,73 @@ body::after {
     background:
         linear-gradient(
             145deg,
-            rgba(9, 25, 65, 0.92),
-            rgba(3, 10, 30, 0.94)
+            rgba(9, 25, 65, 0.94),
+            rgba(2, 7, 24, 0.96)
         );
 
-    border: 2px solid #385bff;
+    border: 2px solid #5275ff;
 
     border-radius: 15px;
 
     box-shadow:
-        0 0 15px rgba(47, 91, 255, 0.8),
+        0 0 15px rgba(65, 105, 255, 0.8),
         0 0 35px rgba(45, 70, 190, 0.5),
-        inset 0 0 25px rgba(30, 60, 160, 0.25);
+        inset 0 0 25px rgba(40, 70, 180, 0.2);
 
-    z-index: 2;
+    z-index: 5;
 
     animation: fadeIn 1.5s ease-out;
 }
 
 
-/* =========================
-   TITLE
-   ========================= */
+/* =========================================
+   🌟 TITLE
+   ========================================= */
 
 h1 {
     font-size: 3em;
 
-    color: #a9c8ff;
+    color: #b9d2ff;
 
     text-shadow:
-        0 0 5px #ffffff,
-        0 0 10px #6d9dff,
-        0 0 20px #3768ff,
-        0 0 40px #1b35c9;
+        0 0 5px white,
+        0 0 10px #9bc5ff,
+        0 0 20px #548cff,
+        0 0 40px #294bc7;
 
     margin-bottom: 20px;
+
+    animation: titleGlow 3s ease-in-out infinite alternate;
 }
 
 
-/* =========================
-   PARAGRAPHS
-   ========================= */
+@keyframes titleGlow {
+
+    from {
+        text-shadow:
+            0 0 5px white,
+            0 0 10px #9bc5ff,
+            0 0 20px #548cff;
+    }
+
+    to {
+        text-shadow:
+            0 0 8px white,
+            0 0 18px #b7dcff,
+            0 0 35px #5e94ff,
+            0 0 55px #3155d5;
+    }
+}
+
+
+/* =========================================
+   💙 PARAGRAPHS
+   ========================================= */
 
 p {
     font-size: 1.2em;
 
-    color: #c2d5ff;
+    color: #c9dcff;
 
     text-shadow:
         0 0 5px #537bff,
@@ -172,11 +505,12 @@ p {
 }
 
 
-/* =========================
-   FADE ANIMATION
-   ========================= */
+/* =========================================
+   🌫️ FADE IN
+   ========================================= */
 
 @keyframes fadeIn {
+
     from {
         opacity: 0;
         transform: translateY(-20px);
@@ -189,9 +523,9 @@ p {
 }
 
 
-/* =========================
-   INPUT
-   ========================= */
+/* =========================================
+   🔮 INPUT
+   ========================================= */
 
 input {
     padding: 12px;
@@ -221,22 +555,24 @@ input {
     animation: fadeIn 2s ease-in-out;
 }
 
+
 input::placeholder {
     color: #7182ad;
 }
 
+
 input:focus {
-    border-color: #8db4ff;
+    border-color: #a8c8ff;
 
     box-shadow:
         0 0 10px #4774ff,
-        0 0 25px rgba(55, 100, 255, 0.5);
+        0 0 25px rgba(55, 100, 255, 0.6);
 }
 
 
-/* =========================
-   BUTTON
-   ========================= */
+/* =========================================
+   💎 CHECK BUTTON
+   ========================================= */
 
 button {
     padding: 12px 20px;
@@ -263,7 +599,7 @@ button {
     font-weight: bold;
 
     text-shadow:
-        0 0 5px #ffffff;
+        0 0 5px white;
 
     box-shadow:
         0 0 10px #3f62ff,
@@ -274,12 +610,13 @@ button {
     animation: fadeIn 2.5s ease-in-out;
 }
 
+
 button:hover {
     background:
         linear-gradient(
             135deg,
             #294cff,
-            #526dff
+            #607cff
         );
 
     box-shadow:
@@ -290,9 +627,9 @@ button:hover {
 }
 
 
-/* =========================
-   GO NEXT BUTTON
-   ========================= */
+/* =========================================
+   🚀 GO NEXT BUTTON
+   ========================================= */
 
 .next-button {
     display: inline-block;
@@ -329,6 +666,7 @@ button:hover {
     transition: all 0.3s ease;
 }
 
+
 .next-button:hover {
     background:
         linear-gradient(
@@ -347,9 +685,9 @@ button:hover {
 }
 
 
-/* =========================
-   MESSAGE
-   ========================= */
+/* =========================================
+   💬 MESSAGE
+   ========================================= */
 
 #message {
     margin-top: 20px;
@@ -366,9 +704,9 @@ button:hover {
 }
 
 
-/* =========================
-   PICTURES
-   ========================= */
+/* =========================================
+   🖼️ GAME IMAGES
+   ========================================= */
 
 .game-image {
     max-width: 100%;
