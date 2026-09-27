@@ -1,143 +1,389 @@
-/* Body */
+/* =========================
+   NIGHT SKY BACKGROUND
+   ========================= */
+
+* {
+    box-sizing: border-box;
+}
+
 body {
-    background: radial-gradient(circle at top, #010827, #03112b);
+    background:
+        radial-gradient(circle at 50% 0%, #101d4a 0%, #050b20 45%, #01030d 100%);
     color: #b5e1ff;
-    font-family: 'Midnight Galactic';
+    font-family: Arial, sans-serif;
+
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    height: 100vh;
+
+    min-height: 100vh;
     margin: 0;
+
     overflow: hidden;
     position: relative;
 }
-/* kontener */
+
+/* Small stars */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background-image:
+        radial-gradient(circle, rgba(255,255,255,0.9) 1px, transparent 1.5px),
+        radial-gradient(circle, rgba(174,220,255,0.8) 1px, transparent 1.5px),
+        radial-gradient(circle, rgba(255,255,255,0.7) 1.5px, transparent 2px);
+
+    background-size:
+        90px 90px,
+        140px 140px,
+        210px 210px;
+
+    background-position:
+        10px 20px,
+        50px 80px,
+        120px 40px;
+
+    opacity: 0.8;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Extra glowing stars */
+body::after {
+    content: "✦     ✧          ⋆       ✦            ✧
+    
+       ⋆          ✦      ✧          ⋆
+
+   ✧          ⋆          ✦        ✧
+
+        ✦             ⋆           ✧
+
+   ⋆        ✧              ✦          ⋆";
+
+    position: fixed;
+    inset: 0;
+
+    color: rgba(190, 225, 255, 0.75);
+    font-size: 18px;
+    line-height: 90px;
+    letter-spacing: 25px;
+
+    white-space: pre;
+    pointer-events: none;
+
+    text-shadow:
+        0 0 5px #ffffff,
+        0 0 10px #7ab8ff,
+        0 0 20px #397cff;
+
+    opacity: 0.55;
+
+    z-index: 1;
+
+    animation: twinkle 4s ease-in-out infinite alternate;
+}
+
+/* Stars gently twinkle */
+@keyframes twinkle {
+    from {
+        opacity: 0.35;
+    }
+
+    to {
+        opacity: 0.8;
+    }
+}
+
+
+/* =========================
+   MAIN CONTAINER
+   ========================= */
+
 .container {
+    position: relative;
+
     text-align: center;
-    padding: 20px;
-    background: rgba(11, 47, 122, 0.8);
-    border: 2px solid #140a9c;
+
+    padding: 30px;
+
     margin-top: 100px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px #0d1dad, 0 0 60px #5962b6;
+
     width: 80%;
     max-width: 600px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(9, 25, 65, 0.92),
+            rgba(3, 10, 30, 0.94)
+        );
+
+    border: 2px solid #385bff;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 0 15px rgba(47, 91, 255, 0.8),
+        0 0 35px rgba(45, 70, 190, 0.5),
+        inset 0 0 25px rgba(30, 60, 160, 0.25);
+
     z-index: 2;
-    animation: fadeIn 2s ease-out;
+
+    animation: fadeIn 1.5s ease-out;
 }
-/* neon title */
+
+
+/* =========================
+   TITLE
+   ========================= */
+
 h1 {
     font-size: 3em;
-    color: #8ea9ff;
-    text-shadow: 0 0 10px #595bb6, 0 0 20px #180dad, 0 0 40px #1d0dad;
+
+    color: #a9c8ff;
+
+    text-shadow:
+        0 0 5px #ffffff,
+        0 0 10px #6d9dff,
+        0 0 20px #3768ff,
+        0 0 40px #1b35c9;
+
     margin-bottom: 20px;
 }
 
-/* paragraphs */
+
+/* =========================
+   PARAGRAPHS
+   ========================= */
+
 p {
     font-size: 1.2em;
-    color: #b5baff;
-    text-shadow: 0 0 5px #6259b6, 0 0 10px #100dad;
+
+    color: #c2d5ff;
+
+    text-shadow:
+        0 0 5px #537bff,
+        0 0 10px #253c9e;
+
     margin-bottom: 20px;
+
     animation: fadeIn 2s ease-in-out;
 }
 
-/* animation */
+
+/* =========================
+   FADE ANIMATION
+   ========================= */
+
 @keyframes fadeIn {
     from {
         opacity: 0;
         transform: translateY(-20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-/* Input */
+
+/* =========================
+   INPUT
+   ========================= */
+
 input {
-    padding: 10px;
-    border: 2px solid #100dad;
-    border-radius: 5px;
+    padding: 12px;
+
+    border: 2px solid #4266ff;
+
+    border-radius: 7px;
+
     width: 80%;
     max-width: 300px;
+
     font-size: 16px;
+
     margin-top: 10px;
-    background-color: #1e1e1e;
-    color: #b5c3ff;
-    text-shadow: 0 0 5px #595fb6, 0 0 10px #1d0dad;
-    box-shadow: 0 0 10px #0d10ad;
+
+    background-color: #050914;
+
+    color: #d7e5ff;
+
+    outline: none;
+
+    box-shadow:
+        0 0 8px rgba(60, 100, 255, 0.6);
+
+    transition: all 0.3s ease;
+
     animation: fadeIn 2s ease-in-out;
 }
 
-/* Buttons */
+input::placeholder {
+    color: #7182ad;
+}
+
+input:focus {
+    border-color: #8db4ff;
+
+    box-shadow:
+        0 0 10px #4774ff,
+        0 0 25px rgba(55, 100, 255, 0.5);
+}
+
+
+/* =========================
+   BUTTON
+   ========================= */
+
 button {
     padding: 12px 20px;
-    background-color: #0d10ad;
+
+    background:
+        linear-gradient(
+            135deg,
+            #172ca8,
+            #294cff
+        );
+
     color: white;
-    border: none;
-    border-radius: 5px;
+
+    border: 1px solid #91b5ff;
+
+    border-radius: 7px;
+
     cursor: pointer;
+
     margin-top: 20px;
+
     font-size: 1.2em;
-    text-shadow: 0 0 5px #5967b6;
-    box-shadow: 0 0 10px #5b59b6;
+
+    font-weight: bold;
+
+    text-shadow:
+        0 0 5px #ffffff;
+
+    box-shadow:
+        0 0 10px #3f62ff,
+        0 0 25px rgba(55, 90, 255, 0.4);
+
     transition: all 0.3s ease-in-out;
+
     animation: fadeIn 2.5s ease-in-out;
 }
+
 button:hover {
-    background-color: #595fb6;
-    box-shadow: 0 0 20px #5976b6, 0 0 40px #0d10ad;
+    background:
+        linear-gradient(
+            135deg,
+            #294cff,
+            #526dff
+        );
+
+    box-shadow:
+        0 0 15px #6285ff,
+        0 0 35px #304fff;
+
     transform: scale(1.05);
 }
-/* Go Next button */
+
+
+/* =========================
+   GO NEXT BUTTON
+   ========================= */
+
 .next-button {
     display: inline-block;
+
     padding: 12px 25px;
-    background-color: #0d10ad;
+
+    background:
+        linear-gradient(
+            135deg,
+            #172ca8,
+            #294cff
+        );
+
     color: white;
+
     border: 2px solid #8ea9ff;
+
     border-radius: 8px;
+
     text-decoration: none;
+
     font-size: 16px;
+
     font-weight: bold;
+
     cursor: pointer;
+
     margin-top: 20px;
-    box-shadow: 0 0 10px #5b59b6;
-    margin-top: 20px;
-    margin-top: 20px;
-    box-shadow: 0 0 10px #5b59b6;
-    transition: all 0.3s ease;
-    box-shadow: 0 0 10px #5b59b6;
+
+    box-shadow:
+        0 0 10px #4969ff,
+        0 0 25px rgba(50, 80, 255, 0.4);
+
     transition: all 0.3s ease;
 }
 
 .next-button:hover {
-    background-color: #595fb6;
+    background:
+        linear-gradient(
+            135deg,
+            #294cff,
+            #5b78ff
+        );
+
     border-color: white;
-    box-shadow: 0 0 20px #5976b6, 0 0 30px #0d10ad;
+
+    box-shadow:
+        0 0 20px #6c8dff,
+        0 0 40px #294cff;
+
     transform: scale(1.05);
 }
 
-/* message style */
+
+/* =========================
+   MESSAGE
+   ========================= */
+
 #message {
     margin-top: 20px;
-    font-size:  18px;
-    color: #bab5ff;
-    text-shadow: 0 0 10px #595bb6;
-    animation: fadeIn 3s ease-in-out;
-    color: #bab5ff;
-    text-shadow: 0 0 10px #595bb6;
-    animation: fadeIn 3s ease-in-out;
+
+    font-size: 18px;
+
+    color: #c8d8ff;
+
+    text-shadow:
+        0 0 8px #597aff,
+        0 0 15px #294cff;
+
+    animation: fadeIn 1s ease-in-out;
 }
 
-/* pictures style */
+
+/* =========================
+   PICTURES
+   ========================= */
+
 .game-image {
     max-width: 100%;
+
     height: auto;
-    border: 3px solid #1d0dad;
-    box-shadow: 0 0 15px #595fb6, 0 0 30px #0d18ad;
+
+    border: 3px solid #4264ff;
+
+    box-shadow:
+        0 0 15px #597dff,
+        0 0 30px #294cff;
+
     border-radius: 10px;
+
     margin-top: 20px;
+
     animation: fadeIn 3s ease-in-out;
 }
