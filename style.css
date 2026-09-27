@@ -1,5 +1,5 @@
 /* =========================================
-   🌌 WHIMSICAL NIGHT SKY
+   REALISTIC STARRY NIGHT SKY
    ========================================= */
 
 * {
@@ -24,392 +24,201 @@ body {
     position: relative;
 
     font-family: Arial, sans-serif;
-    color: #d8e7ff;
+    color: #dbe7ff;
 
-    /* Deep magical night sky */
+    /* Deep realistic night sky */
     background:
         radial-gradient(
-            circle at 50% -10%,
-            #172b67 0%,
-            #0b163d 30%,
-            #04091f 65%,
-            #01030d 100%
+            circle at 70% 15%,
+            rgba(34, 52, 105, 0.45) 0%,
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 25% 35%,
+            rgba(20, 38, 82, 0.35) 0%,
+            transparent 30%
+        ),
+        linear-gradient(
+            180deg,
+            #020513 0%,
+            #050b20 45%,
+            #08122d 75%,
+            #020611 100%
         );
 }
 
 
 /* =========================================
-   ✨ TINY STARS
+   🌙 MOON
+   ========================================= */
+
+body::after {
+    content: "";
+
+    position: fixed;
+
+    width: 105px;
+    height: 105px;
+
+    right: 9%;
+    top: 9%;
+
+    border-radius: 50%;
+
+    /* Moon surface */
+    background:
+        radial-gradient(
+            circle at 30% 28%,
+            rgba(255,255,255,0.9) 0 5px,
+            transparent 6px
+        ),
+        radial-gradient(
+            circle at 65% 35%,
+            rgba(190,190,195,0.35) 0 9px,
+            transparent 10px
+        ),
+        radial-gradient(
+            circle at 45% 65%,
+            rgba(180,180,185,0.3) 0 7px,
+            transparent 8px
+        ),
+        radial-gradient(
+            circle at 75% 70%,
+            rgba(170,170,180,0.28) 0 5px,
+            transparent 6px
+        ),
+        radial-gradient(
+            circle at 35% 45%,
+            rgba(160,160,170,0.25) 0 6px,
+            transparent 7px
+        ),
+        radial-gradient(
+            circle at 50% 50%,
+            #f7f5e8 0%,
+            #e9e8d9 55%,
+            #c9cbd0 100%
+        );
+
+    box-shadow:
+        0 0 15px rgba(235, 240, 255, 0.7),
+        0 0 35px rgba(190, 210, 255, 0.4),
+        0 0 70px rgba(120, 155, 220, 0.2);
+
+    z-index: 1;
+
+    pointer-events: none;
+
+    animation: moonGlow 6s ease-in-out infinite alternate;
+}
+
+
+/* =========================================
+   ✨ NATURAL STAR FIELD
    ========================================= */
 
 body::before {
     content: "";
 
     position: fixed;
+
     inset: 0;
 
     pointer-events: none;
 
     z-index: 0;
 
-    /* Lots of tiny stars */
+    /*
+       Different sizes and positions make
+       the stars look random instead of
+       like a repeating pattern.
+    */
     background-image:
-        radial-gradient(circle, rgba(255,255,255,0.95) 1px, transparent 1.5px),
-        radial-gradient(circle, rgba(185,220,255,0.9) 1px, transparent 1.5px),
-        radial-gradient(circle, rgba(255,255,255,0.75) 1.2px, transparent 1.8px),
-        radial-gradient(circle, rgba(140,190,255,0.65) 1px, transparent 1.5px);
+        radial-gradient(circle at 8% 12%, rgba(255,255,255,0.95) 0 1px, transparent 1.8px),
+        radial-gradient(circle at 17% 28%, rgba(220,235,255,0.75) 0 1px, transparent 1.7px),
+        radial-gradient(circle at 27% 10%, rgba(255,255,255,0.85) 0 1.2px, transparent 2px),
+        radial-gradient(circle at 38% 22%, rgba(190,220,255,0.7) 0 1px, transparent 1.8px),
+        radial-gradient(circle at 48% 8%, rgba(255,255,255,0.9) 0 1px, transparent 1.8px),
+        radial-gradient(circle at 58% 27%, rgba(210,230,255,0.7) 0 1px, transparent 1.7px),
+        radial-gradient(circle at 68% 13%, rgba(255,255,255,0.9) 0 1px, transparent 1.8px),
+        radial-gradient(circle at 79% 31%, rgba(205,225,255,0.75) 0 1px, transparent 1.8px),
+        radial-gradient(circle at 91% 17%, rgba(255,255,255,0.85) 0 1.2px, transparent 2px),
 
-    background-size:
-        83px 91px,
-        137px 149px,
-        197px 181px,
-        263px 239px;
+        radial-gradient(circle at 5% 49%, rgba(200,225,255,0.7) 0 1px, transparent 1.7px),
+        radial-gradient(circle at 15% 67%, rgba(255,255,255,0.85) 0 1px, transparent 1.8px),
+        radial-gradient(circle at 25% 54%, rgba(220,235,255,0.7) 0 1px, transparent 1.7px),
+        radial-gradient(circle at 35% 76%, rgba(255,255,255,0.9) 0 1.1px, transparent 1.9px),
+        radial-gradient(circle at 47% 58%, rgba(190,220,255,0.7) 0 1px, transparent 1.8px),
+        radial-gradient(circle at 57% 73%, rgba(255,255,255,0.85) 0 1px, transparent 1.8px),
+        radial-gradient(circle at 69% 61%, rgba(205,225,255,0.75) 0 1px, transparent 1.8px),
+        radial-gradient(circle at 81% 78%, rgba(255,255,255,0.9) 0 1px, transparent 1.8px),
+        radial-gradient(circle at 94% 64%, rgba(210,230,255,0.7) 0 1px, transparent 1.7px),
 
-    background-position:
-        15px 10px,
-        70px 40px,
-        20px 100px,
-        130px 20px;
+        radial-gradient(circle at 11% 89%, rgba(255,255,255,0.8) 0 1px, transparent 1.8px),
+        radial-gradient(circle at 29% 92%, rgba(210,230,255,0.7) 0 1px, transparent 1.8px),
+        radial-gradient(circle at 52% 91%, rgba(255,255,255,0.85) 0 1px, transparent 1.8px),
+        radial-gradient(circle at 73% 88%, rgba(210,230,255,0.7) 0 1px, transparent 1.8px),
+        radial-gradient(circle at 88% 94%, rgba(255,255,255,0.85) 0 1px, transparent 1.8px);
 
-    animation:
-        starsDrift 35s linear infinite,
-        starsTwinkle 5s ease-in-out infinite alternate;
+    animation: starsTwinkle 8s ease-in-out infinite alternate;
 }
 
 
 /* =========================================
-   ⭐ SPARKLING STARS
-   ========================================= */
-
-body::after {
-    content: "✦        ✧             ✦
-   
-       ✧              ⋆             ✦
-   
-  ⋆             ✦          ✧
-   
-         ✦              ⋆
-   
-    ✧          ✦               ✧
-   
-           ⋆          ✦
-   
-  ✦              ✧          ⋆";
-
-    position: fixed;
-    inset: 0;
-
-    pointer-events: none;
-
-    z-index: 1;
-
-    white-space: pre;
-
-    color: rgba(230, 242, 255, 0.8);
-
-    font-size: 22px;
-    line-height: 115px;
-    letter-spacing: 18px;
-
-    text-shadow:
-        0 0 4px #ffffff,
-        0 0 8px #b7d9ff,
-        0 0 16px #70a8ff,
-        0 0 30px #477cff;
-
-    animation:
-        sparkle 3s ease-in-out infinite alternate,
-        sparkleMove 18s ease-in-out infinite alternate;
-}
-
-
-/* =========================================
-   🌟 STAR TWINKLING
+   ✨ STAR TWINKLING
    ========================================= */
 
 @keyframes starsTwinkle {
 
     0% {
-        opacity: 0.35;
+        opacity: 0.55;
     }
 
-    25% {
-        opacity: 0.8;
+    20% {
+        opacity: 0.75;
     }
 
-    50% {
-        opacity: 0.45;
-    }
-
-    75% {
-        opacity: 0.95;
-    }
-
-    100% {
+    40% {
         opacity: 0.5;
     }
-}
 
-
-/* =========================================
-   🌌 VERY SLOW STAR MOVEMENT
-   ========================================= */
-
-@keyframes starsDrift {
-
-    0% {
-        background-position:
-            15px 10px,
-            70px 40px,
-            20px 100px,
-            130px 20px;
-    }
-
-    50% {
-        background-position:
-            35px 30px,
-            45px 70px,
-            45px 80px,
-            100px 45px;
-    }
-
-    100% {
-        background-position:
-            15px 10px,
-            70px 40px,
-            20px 100px,
-            130px 20px;
-    }
-}
-
-
-/* =========================================
-   ✨ BIG STAR SPARKLE
-   ========================================= */
-
-@keyframes sparkle {
-
-    0% {
-        opacity: 0.25;
-        transform: scale(0.92);
-    }
-
-    30% {
-        opacity: 0.75;
-        transform: scale(1);
-    }
-
-    55% {
-        opacity: 0.35;
-        transform: scale(0.95);
+    60% {
+        opacity: 0.9;
     }
 
     80% {
-        opacity: 1;
-        transform: scale(1.05);
+        opacity: 0.6;
     }
 
     100% {
-        opacity: 0.45;
-        transform: scale(0.98);
-    }
-}
-
-
-@keyframes sparkleMove {
-
-    0% {
-        transform: translate(0, 0);
-    }
-
-    50% {
-        transform: translate(-8px, 5px);
-    }
-
-    100% {
-        transform: translate(5px, -4px);
+        opacity: 0.82;
     }
 }
 
 
 /* =========================================
-   ☄️ SHOOTING STAR / ROCKET
+   🌙 SUBTLE MOONLIGHT
    ========================================= */
 
-/*
-   This creates a bright shooting star with
-   a long glowing trail.
-*/
-
-.container::before {
-    content: "";
-
-    position: fixed;
-
-    width: 7px;
-    height: 7px;
-
-    border-radius: 50%;
-
-    background: white;
-
-    box-shadow:
-        0 0 5px white,
-        0 0 10px #dff2ff,
-        0 0 20px #8bc5ff,
-        0 0 35px #4d91ff;
-
-    top: 18%;
-    left: -10%;
-
-    z-index: 3;
-
-    pointer-events: none;
-
-    animation: shootingStar 7s linear infinite;
-}
-
-
-/* =========================================
-   💫 SHOOTING STAR TRAIL
-   ========================================= */
-
-.container::after {
-    content: "";
-
-    position: fixed;
-
-    width: 170px;
-    height: 3px;
-
-    border-radius: 100%;
-
-    top: 18%;
-    left: -30%;
-
-    z-index: 2;
-
-    pointer-events: none;
-
-    background:
-        linear-gradient(
-            to right,
-            transparent,
-            rgba(92, 170, 255, 0.15),
-            rgba(168, 220, 255, 0.55),
-            white
-        );
-
-    box-shadow:
-        0 0 8px #9bd4ff,
-        0 0 18px #5caaff,
-        0 0 30px rgba(66, 137, 255, 0.7);
-
-    transform: rotate(-25deg);
-
-    animation: shootingTrail 7s linear infinite;
-}
-
-
-/* =========================================
-   ☄️ SHOOTING STAR ANIMATION
-   ========================================= */
-
-@keyframes shootingStar {
+@keyframes moonGlow {
 
     0% {
-        left: -10%;
-        top: 15%;
-        opacity: 0;
-        transform: scale(0.5);
-    }
-
-    5% {
-        opacity: 1;
-    }
-
-    20% {
-        left: 25%;
-        top: 27%;
-        opacity: 1;
-        transform: scale(1);
-    }
-
-    30% {
-        left: 50%;
-        top: 39%;
-        opacity: 1;
-        transform: scale(1.15);
-    }
-
-    40% {
-        left: 75%;
-        top: 51%;
-        opacity: 0.8;
-        transform: scale(1);
-    }
-
-    46% {
-        left: 110%;
-        top: 67%;
-        opacity: 0;
-        transform: scale(0.5);
+        box-shadow:
+            0 0 12px rgba(235, 240, 255, 0.65),
+            0 0 30px rgba(190, 210, 255, 0.3),
+            0 0 60px rgba(120, 155, 220, 0.15);
     }
 
     100% {
-        left: 110%;
-        top: 67%;
-        opacity: 0;
-    }
-}
-
-
-@keyframes shootingTrail {
-
-    0% {
-        left: -30%;
-        top: 15%;
-        opacity: 0;
-    }
-
-    5% {
-        opacity: 1;
-    }
-
-    20% {
-        left: 10%;
-        top: 27%;
-        opacity: 1;
-    }
-
-    30% {
-        left: 35%;
-        top: 39%;
-        opacity: 1;
-    }
-
-    40% {
-        left: 60%;
-        top: 51%;
-        opacity: 0.8;
-    }
-
-    46% {
-        left: 100%;
-        top: 67%;
-        opacity: 0;
-    }
-
-    100% {
-        left: 100%;
-        top: 67%;
-        opacity: 0;
+        box-shadow:
+            0 0 18px rgba(245, 245, 255, 0.8),
+            0 0 40px rgba(190, 210, 255, 0.4),
+            0 0 75px rgba(120, 155, 220, 0.22);
     }
 }
 
 
 /* =========================================
-   🎂 MAIN GAME BOX
+   🎂 GAME CONTAINER
    ========================================= */
 
 .container {
@@ -425,20 +234,17 @@ body::after {
     max-width: 600px;
 
     background:
-        linear-gradient(
-            145deg,
-            rgba(9, 25, 65, 0.94),
-            rgba(2, 7, 24, 0.96)
-        );
+        rgba(4, 10, 29, 0.86);
 
-    border: 2px solid #5275ff;
+    border: 1px solid rgba(116, 151, 220, 0.65);
 
     border-radius: 15px;
 
     box-shadow:
-        0 0 15px rgba(65, 105, 255, 0.8),
-        0 0 35px rgba(45, 70, 190, 0.5),
-        inset 0 0 25px rgba(40, 70, 180, 0.2);
+        0 0 20px rgba(45, 75, 150, 0.3),
+        inset 0 0 30px rgba(50, 80, 150, 0.08);
+
+    backdrop-filter: blur(4px);
 
     z-index: 5;
 
@@ -453,36 +259,14 @@ body::after {
 h1 {
     font-size: 3em;
 
-    color: #b9d2ff;
+    color: #d7e5ff;
 
     text-shadow:
-        0 0 5px white,
-        0 0 10px #9bc5ff,
-        0 0 20px #548cff,
-        0 0 40px #294bc7;
+        0 0 5px rgba(255,255,255,0.9),
+        0 0 12px rgba(130,170,255,0.8),
+        0 0 25px rgba(75,115,210,0.5);
 
     margin-bottom: 20px;
-
-    animation: titleGlow 3s ease-in-out infinite alternate;
-}
-
-
-@keyframes titleGlow {
-
-    from {
-        text-shadow:
-            0 0 5px white,
-            0 0 10px #9bc5ff,
-            0 0 20px #548cff;
-    }
-
-    to {
-        text-shadow:
-            0 0 8px white,
-            0 0 18px #b7dcff,
-            0 0 35px #5e94ff,
-            0 0 55px #3155d5;
-    }
 }
 
 
@@ -493,11 +277,10 @@ h1 {
 p {
     font-size: 1.2em;
 
-    color: #c9dcff;
+    color: #cbd9f5;
 
     text-shadow:
-        0 0 5px #537bff,
-        0 0 10px #253c9e;
+        0 0 5px rgba(80,120,200,0.7);
 
     margin-bottom: 20px;
 
@@ -530,7 +313,7 @@ p {
 input {
     padding: 12px;
 
-    border: 2px solid #4266ff;
+    border: 1px solid #718bc5;
 
     border-radius: 7px;
 
@@ -541,14 +324,14 @@ input {
 
     margin-top: 10px;
 
-    background-color: #050914;
+    background: rgba(2, 6, 18, 0.9);
 
-    color: #d7e5ff;
+    color: #e0eaff;
 
     outline: none;
 
     box-shadow:
-        0 0 8px rgba(60, 100, 255, 0.6);
+        0 0 8px rgba(80,110,180,0.3);
 
     transition: all 0.3s ease;
 
@@ -557,16 +340,16 @@ input {
 
 
 input::placeholder {
-    color: #7182ad;
+    color: #6f7d9c;
 }
 
 
 input:focus {
-    border-color: #a8c8ff;
+    border-color: #a7c1f5;
 
     box-shadow:
-        0 0 10px #4774ff,
-        0 0 25px rgba(55, 100, 255, 0.6);
+        0 0 10px rgba(110,150,230,0.6),
+        0 0 25px rgba(70,110,200,0.25);
 }
 
 
@@ -578,15 +361,11 @@ button {
     padding: 12px 20px;
 
     background:
-        linear-gradient(
-            135deg,
-            #172ca8,
-            #294cff
-        );
+        rgba(25, 48, 105, 0.95);
 
-    color: white;
+    color: #f0f5ff;
 
-    border: 1px solid #91b5ff;
+    border: 1px solid #829bd4;
 
     border-radius: 7px;
 
@@ -598,12 +377,10 @@ button {
 
     font-weight: bold;
 
-    text-shadow:
-        0 0 5px white;
+    text-shadow: 0 0 5px rgba(255,255,255,0.7);
 
     box-shadow:
-        0 0 10px #3f62ff,
-        0 0 25px rgba(55, 90, 255, 0.4);
+        0 0 10px rgba(75,110,190,0.4);
 
     transition: all 0.3s ease-in-out;
 
@@ -613,15 +390,11 @@ button {
 
 button:hover {
     background:
-        linear-gradient(
-            135deg,
-            #294cff,
-            #607cff
-        );
+        rgba(50, 80, 155, 0.95);
 
     box-shadow:
-        0 0 15px #6285ff,
-        0 0 35px #304fff;
+        0 0 15px rgba(120,155,230,0.7),
+        0 0 30px rgba(60,100,190,0.4);
 
     transform: scale(1.05);
 }
@@ -637,15 +410,11 @@ button:hover {
     padding: 12px 25px;
 
     background:
-        linear-gradient(
-            135deg,
-            #172ca8,
-            #294cff
-        );
+        rgba(25, 48, 105, 0.95);
 
-    color: white;
+    color: #f0f5ff;
 
-    border: 2px solid #8ea9ff;
+    border: 1px solid #829bd4;
 
     border-radius: 8px;
 
@@ -660,8 +429,7 @@ button:hover {
     margin-top: 20px;
 
     box-shadow:
-        0 0 10px #4969ff,
-        0 0 25px rgba(50, 80, 255, 0.4);
+        0 0 10px rgba(75,110,190,0.4);
 
     transition: all 0.3s ease;
 }
@@ -669,17 +437,13 @@ button:hover {
 
 .next-button:hover {
     background:
-        linear-gradient(
-            135deg,
-            #294cff,
-            #5b78ff
-        );
+        rgba(50, 80, 155, 0.95);
 
-    border-color: white;
+    border-color: #c9d8ff;
 
     box-shadow:
-        0 0 20px #6c8dff,
-        0 0 40px #294cff;
+        0 0 15px rgba(120,155,230,0.7),
+        0 0 30px rgba(60,100,190,0.4);
 
     transform: scale(1.05);
 }
@@ -694,11 +458,10 @@ button:hover {
 
     font-size: 18px;
 
-    color: #c8d8ff;
+    color: #d3dff5;
 
     text-shadow:
-        0 0 8px #597aff,
-        0 0 15px #294cff;
+        0 0 8px rgba(100,140,210,0.7);
 
     animation: fadeIn 1s ease-in-out;
 }
@@ -713,11 +476,10 @@ button:hover {
 
     height: auto;
 
-    border: 3px solid #4264ff;
+    border: 2px solid #657fb9;
 
     box-shadow:
-        0 0 15px #597dff,
-        0 0 30px #294cff;
+        0 0 15px rgba(80,120,200,0.45);
 
     border-radius: 10px;
 
